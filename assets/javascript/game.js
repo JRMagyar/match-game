@@ -8,7 +8,6 @@ window.onload = function(){
     let firstCardID = "";
     let secondCardID ="";
     let count = 0;
-    var audio = new Audio("assets/sound/fanfare.mp3");
 
     $(".play-card").on("click", function(){
         cardSelect = $(this).attr("value");
@@ -30,7 +29,6 @@ window.onload = function(){
                     $("#" + secondCardID).hide()
                     count++; 
                     if(count === 2){
-                        audio.play()
                         setTimeout(function(){alert("You won!");
                         }, 200);
                     }
