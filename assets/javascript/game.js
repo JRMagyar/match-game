@@ -25,8 +25,8 @@ window.onload = function(){
         if((firstSelect === true) && (secondSelect === true)){
             if(firstCardVal == secondCardVal){
                 setTimeout(function(){
-                    $("#" + firstCardID).hide()
-                    $("#" + secondCardID).hide()
+                    $("#" + firstCardID).css("visibility", "hidden")
+                    $("#" + secondCardID).css("visibility", "hidden")
                     count++; 
                     if(count === 2){
                         setTimeout(function(){alert("You won!");

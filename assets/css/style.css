@@ -1,0 +1,8 @@
+#kittens{
+    height:500px;
+    width: 400px;
+    position: absolute;
+    top: 55px;
+    left: 230px;
+    z-index: -1;
+}
