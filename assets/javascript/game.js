@@ -30,14 +30,14 @@ window.onload = function(){
                     count++; 
                     if(count === 2){
                         setTimeout(function(){alert("You won!");
-                        }, 200);
+                        }, 10);
                     }
-                }, 500);
+                }, 300);
             }
             else{
                 setTimeout(function(){
                 $("#" + firstCardID).attr("src", "assets/images/card-back.png");
-                $("#" + secondCardID).attr("src", "assets/images/card-back.png");}, 500); 
+                $("#" + secondCardID).attr("src", "assets/images/card-back.png");}, 300); 
             }
             firstSelect = false;
             secondSelect = false;
