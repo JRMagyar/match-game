@@ -7,6 +7,7 @@ window.onload = function(){
     let secondCardVal = "";
     let firstCardID = "";
     let secondCardID ="";
+    let count = 0;
 
     $(".play-card").on("click", function(){
         cardSelect = $(this).attr("value");
@@ -24,8 +25,13 @@ window.onload = function(){
         if((firstSelect === true) && (secondSelect === true)){
             if(firstCardVal == secondCardVal){
                 setTimeout(function(){
-                $("#" + firstCardID).hide()
-                $("#" + secondCardID).hide()}, 500);
+                    $("#" + firstCardID).hide()
+                    $("#" + secondCardID).hide()
+                    count++; 
+                    if(count === 2){
+                        setTimeout(function(){alert("You won!");}, 200);
+                    }
+                }, 500);
             }
             else{
                 setTimeout(function(){
@@ -36,6 +42,7 @@ window.onload = function(){
             secondSelect = false;
         }
     });
+    
 }
 
 
