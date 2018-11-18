@@ -29,8 +29,7 @@ window.onload = function(){
                     $("#" + secondCardID).css("visibility", "hidden")
                     count++; 
                     if(count === 2){
-                        setTimeout(function(){alert("You won!");
-                        }, 250);
+                        $("#win-box").text("You won!")
                     }
                 }, 300);
             }
