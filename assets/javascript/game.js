@@ -30,7 +30,7 @@ window.onload = function(){
                     count++; 
                     if(count === 2){
                         setTimeout(function(){alert("You won!");
-                        }, 10);
+                        }, 100);
                     }
                 }, 300);
             }
