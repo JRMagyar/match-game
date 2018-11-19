@@ -9,6 +9,17 @@ window.onload = function(){
     let secondCardID ="";
     let count = 0;
 
+//This section is to try and randomize the card order
+    //first all cards are placed in an array, the array is then sorted into a random order
+        var cards = ["1", "1", "2", "2"];
+        var shuffled =cards.sort(function(a, b){return 0.5 - Math.random()})
+    //now we creat a function that attaches the values from shuffled array to the divs
+    for(i=0, c=1; i < cards.length; i++, c++){
+        $("#card"+c).attr("value", cards[i])
+        
+    }
+
+//this section contains actual game play functions
     $(".play-card").on("click", function(){
         cardSelect = $(this).attr("value");
         $(this).attr("src", imagePath + cardSelect + ".png");
