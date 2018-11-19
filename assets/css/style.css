@@ -1,9 +1,8 @@
 #kittens{
-    height:500px;
-    width: 400px;
-    position: absolute;
-    top: 55px;
-    left: 230px;
+    height: 485px;
+    width: 375px;
+    position: relative;
+    top: -491px;
     z-index: -1;
 }
 .play-card{
@@ -11,6 +10,7 @@
     width: 200px;
 }
 #win-box{
+    position: absolute;
     padding-left: 120px;
     color: red;
 }
