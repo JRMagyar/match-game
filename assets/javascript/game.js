@@ -40,7 +40,7 @@ window.onload = function(){
             firstCardID = $(this).attr("id")
             firstSelect = true
         }
-        else if((firstSelect === true) && (secondSelect === false)){
+        else if((firstSelect === true) && (secondSelect === false) && firstCardID !== $(this).attr("id")){
             secondCardVal = cardSelect
             secondCardID = $(this).attr("id")
             secondSelect = true
