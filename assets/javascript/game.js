@@ -45,6 +45,10 @@ window.onload = function(){
             secondCardID = $(this).attr("id")
             secondSelect = true
         }
+        else if((firstSelect === true) && (secondSelect === false) && firstCardID == $(this).attr("id")){
+            $("#" + firstCardID).attr("src", imagePath + "card-back.png")
+            firstSelect = false
+        }
         if((firstSelect === true) && (secondSelect === true)){
             if(firstCardVal == secondCardVal){
                 setTimeout(function(){
