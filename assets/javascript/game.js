@@ -9,17 +9,29 @@ window.onload = function(){
     let secondCardID ="";
     let count = 0;
 
-//This section is to try and randomize the card order
+    //This section is to try and randomize the card order
     //first all cards are placed in an array, the array is then sorted into a random order
-        var cards = ["1", "1", "2", "2"];
-        var shuffled =cards.sort(function(a, b){return 0.5 - Math.random()})
+    var cards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14];
+    var shuffled = "";
     //now we creat a function that attaches the values from shuffled array to the divs
-    for(i=0, c=1; i < cards.length; i++, c++){
-        $("#card"+c).attr("value", cards[i])
-        
+    function reset(){
+       shuffled = cards.sort(function(a, b){return 0.5 - Math.random()})
+        for(i=0, c=1; i < cards.length; i++, c++){
+            $("#card"+c).attr({
+                value: cards[i],
+                src: imagePath + "card-back.png",
+                style: "visibility: visible"})
+        }
+        $("#win-box").text("")
     }
+    
+    reset();
 
-//this section contains actual game play functions
+    $("#new-game").on("click", function(){
+        reset();
+    })
+
+
     $(".play-card").on("click", function(){
         cardSelect = $(this).attr("value");
         $(this).attr("src", imagePath + cardSelect + ".png");
@@ -36,18 +48,18 @@ window.onload = function(){
         if((firstSelect === true) && (secondSelect === true)){
             if(firstCardVal == secondCardVal){
                 setTimeout(function(){
-                    $("#" + firstCardID).css("visibility", "hidden")
-                    $("#" + secondCardID).css("visibility", "hidden")
+                    $("#" + firstCardID).attr("style", "visibility: hidden")
+                    $("#" + secondCardID).attr("style", "visibility: hidden")
                     count++; 
-                    if(count === 2){
+                    if(count === 14){
                         $("#win-box").text("You won!")
                     }
                 }, 300);
             }
             else{
                 setTimeout(function(){
-                $("#" + firstCardID).attr("src", "assets/images/card-back.png");
-                $("#" + secondCardID).attr("src", "assets/images/card-back.png");}, 300); 
+                $("#" + firstCardID).attr("src", imagePath + "card-back.png");
+                $("#" + secondCardID).attr("src", imagePath + "card-back.png");}, 300); 
             }
             firstSelect = false;
             secondSelect = false;
