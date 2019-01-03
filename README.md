@@ -1,2 +1,2 @@
 # match-game
-ReadMe Coming Soon
+A memory based match game created using JavaScript. It assigns each possible value to two random cards on the "table". When clicked front of the card is displayed, which is determined by the assigned value. When two cards of the same value are selected they are both removed from play. The user successfully completes the game when all cards are removed from play. Whenever the "New Game" button is selected the cards are "shuffled" and the game restarts.
